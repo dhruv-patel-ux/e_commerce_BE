@@ -1,4 +1,5 @@
 import { Roles } from "src/auth/entity/roles.entity";
+import { Orders } from "src/payment-gatways/entity/order.entity";
 import { PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, Entity, OneToMany, ManyToMany, ManyToOne, JoinTable, JoinColumn } from "typeorm";
 
 @Entity()
@@ -29,4 +30,7 @@ export class Users {
 
     @UpdateDateColumn({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP', onUpdate: 'CURRENT_TIMESTAMP' })
     updatedAt: Date;
+
+    @OneToMany(() => Orders, orderItem => orderItem.user)
+    orders: Orders[];
 }

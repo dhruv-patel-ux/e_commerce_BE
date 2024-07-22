@@ -22,6 +22,10 @@ import { PaymentGatwaysModule } from './payment-gatways/payment-gatways.module';
 import { TransectionHistory } from './payment-gatways/entity/transectionHistory.entity';
 import { CartModule } from './cart/cart.module';
 import { Cart } from './cart/entities/cart.entity';
+import { OrderItem } from './payment-gatways/entity/order-item.entity';
+import { Orders } from './payment-gatways/entity/order.entity';
+import { ReviewModule } from './review/review.module';
+import { Review } from './review/entities/review.entity';
 
 @Module({
   imports: [
@@ -39,7 +43,7 @@ import { Cart } from './cart/entities/cart.entity';
       username: 'root',
       password: '',
       database: 'e-commerce',
-      entities: [Users, Roles, Category, Tag, Product, TransectionHistory,Cart],
+      entities: [Users, Roles, Category, Tag, Product, TransectionHistory, Cart, OrderItem, Orders, Review],
       synchronize: true,
     }),
     UsersModule,
@@ -54,6 +58,7 @@ import { Cart } from './cart/entities/cart.entity';
     ProductModule,
     PaymentGatwaysModule,
     CartModule,
+    ReviewModule,
   ],
   controllers: [AppController],
   providers: [AppService, PasswordService],

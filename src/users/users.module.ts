@@ -6,10 +6,11 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { PasswordService } from 'src/common/encryption.service';
 import { AuthModule } from 'src/auth/auth.module';
 import { Roles } from 'src/auth/entity/roles.entity';
+import { Orders } from 'src/payment-gatways/entity/order.entity';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([Users, Roles]),
+    TypeOrmModule.forFeature([Users, Roles,Orders]),
     AuthModule
   ],
   controllers: [UsersController],
