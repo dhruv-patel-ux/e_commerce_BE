@@ -31,7 +31,7 @@ export class PaymentGatwaysController {
     return this.paymentGatwaysService.getOrders();
   }
   @Get('get-my-orders')
-  @UseGuards(AuthGuard, RoleGuard)
+  @UseGuards(AuthGuard)
   GetMyOrders(@Req() request:any) {
     const {id} = request.user
     return this.paymentGatwaysService.getMyOrders(id);

@@ -26,6 +26,7 @@ import { OrderItem } from './payment-gatways/entity/order-item.entity';
 import { Orders } from './payment-gatways/entity/order.entity';
 import { ReviewModule } from './review/review.module';
 import { Review } from './review/entities/review.entity';
+import { RedisModule } from './common/redis.module';
 
 @Module({
   imports: [
@@ -46,6 +47,7 @@ import { Review } from './review/entities/review.entity';
       entities: [Users, Roles, Category, Tag, Product, TransectionHistory, Cart, OrderItem, Orders, Review],
       synchronize: true,
     }),
+    RedisModule,
     UsersModule,
     AuthModule,
     JwtModule.register({
