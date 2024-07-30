@@ -8,6 +8,14 @@ export class CreateCategoryDto {
     @IsString()
     @ApiProperty()
     description: string;
+
+    @ApiProperty({
+        type: 'string',
+        format: 'binary',
+        required: false,
+        description: 'Image file'
+    })
+    image?: any;
 }
 
 

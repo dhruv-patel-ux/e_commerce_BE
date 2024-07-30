@@ -47,7 +47,7 @@ import { RedisModule } from './common/redis.module';
       entities: [Users, Roles, Category, Tag, Product, TransectionHistory, Cart, OrderItem, Orders, Review],
       synchronize: true,
     }),
-    RedisModule,
+    // RedisModule,
     UsersModule,
     AuthModule,
     JwtModule.register({
