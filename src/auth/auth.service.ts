@@ -24,10 +24,10 @@ export class AuthService {
       throw new HttpException('All Fields are required [email, password]', HttpStatus.BAD_REQUEST);
     };
     const [user] = await this.usersRepository.query(`
-      SELECT user.*, role.role
-      FROM users user
-      INNER JOIN roles role ON user.roleId = role.id
-      WHERE user.email = '${createAuthDto.email}'
+      SELECT users.*, roles.role
+      FROM users
+      INNER JOIN roles ON users.roleId = roles.id
+      WHERE users.email = '${createAuthDto.email}'
     `);
     if (!user) {
       throw new HttpException('Invalid email', HttpStatus.BAD_REQUEST);

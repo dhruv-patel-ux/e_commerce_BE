@@ -31,7 +31,7 @@ import { RedisModule } from './common/redis.module';
 @Module({
   imports: [
     ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'public'),
+     rootPath: join(__dirname, '..', 'public'),
     }),
     ConfigModule.forRoot({
       envFilePath: '.env',
@@ -39,11 +39,11 @@ import { RedisModule } from './common/redis.module';
     }),
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: 'localhost',
+      host: 'dk-group.cp8iqsysyjw6.ap-south-1.rds.amazonaws.com',
       port: 3306,
-      username: 'root',
-      password: '',
-      database: 'e-commerce',
+      username: 'DKGROUP',
+      password: 'DkGroup2002',
+      database: 'dk-group',
       entities: [Users, Roles, Category, Tag, Product, TransectionHistory, Cart, OrderItem, Orders, Review],
       synchronize: true,
     }),
