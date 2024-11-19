@@ -29,7 +29,7 @@ export class PaymentGatwaysService {
     private productRepository: Repository<Product>,
   ) {
     this.stripeClient = new Stripe(
-      process.env.STRIPE_SECRET || 'sk_test_51PeCmwBOql4w7Rm7pzcCcESKFkRkkZKmpo6rkX9YoszbMmAYXr7FZra76TzXZca1v4D2ze49uQgbZOrt9oUTDH5h00OIUwI3Yb',
+      process.env.STRIPE_SECRET || 'your private key',
       { apiVersion: '2020-08-27' },
     );
   }
